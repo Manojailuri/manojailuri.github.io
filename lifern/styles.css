@@ -1,0 +1,49 @@
+.oi-regular {
+  font-family: "Oi", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.rubik-microbe-regular {
+  font-family: "Rubik Microbe", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.freckle-face-regular {
+  font-family: "Freckle Face", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#vid {
+ left: 50%;
+/*transform: translate(6%, 50%);*/
+  display: block;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+
+h2 {
+	text-align: right;
+	  font-family: "Freckle Face", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+body {
+	background-color: #ff0000;
+}
+h1 {
+  font-family: "Freckle Face", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  
+  
+  padding-top: 300px;
+	
+	
+	font-size: 900%;
+	color: #000000;
+	text-align: center;
+	
+}
