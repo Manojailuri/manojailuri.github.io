@@ -27,7 +27,7 @@ p {
 	  font-family: "Freckle Face", system-ui;
   font-weight: 400;
   font-style: normal;
-	padding: 30px 30%;
+	padding: 30px 10%;
 	 text-align: justify;
 }
 
@@ -39,7 +39,7 @@ h1 {
   font-style: normal;
   
   
-  padding-top: 100px;
+  padding-top: 0px;
 	
 	
 	font-size: 900%;
