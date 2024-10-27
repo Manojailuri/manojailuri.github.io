@@ -123,7 +123,7 @@ h1 {
         /* Label styling */
         .input-label {
             position: absolute;
-            top: 80%;
+            top: 40%;
             left: 10px;
             font-size: 16px;
             /*color: #888;*/
@@ -136,7 +136,7 @@ h1 {
         /* Move label up when input is focused or has text */
         .input-field:focus + .input-label,
         .input-field:not(:placeholder-shown) + .input-label {
-            top: 80px;
+            top: -15px;
             left: 10px;
             font-size: 12px;
             color: #111111;
