@@ -14,6 +14,18 @@
   font-style: normal;
 }
 
+// <uniquifier>: Use a unique and descriptive class name
+
+.climate-crisis-<uniquifier> {
+  font-family: "Climate Crisis", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "YEAR" 1979;
+}
+
+
 #vid {
  left: 50%;
 /*transform: translate(6%, 50%);*/
@@ -24,26 +36,44 @@
 
 p {
 	text-align: center;
-	  font-family: "Freckle Face", system-ui;
-  font-weight: 400;
-  font-style: normal;
+	 /* font-family: "Freckle Face", system-ui;
+	 font-family: "Climate Crisis", serif;
+	 
+	 
+	  font-weight: 100;
+	  font-style: normal;*/
+	  
+	  font-family: "Roboto", serif;
+	  font-weight: 100;
+	  font-style: normal;
+	  
 	padding: 10px 10%;
-	/* text-align: justify;*/
+	font-size: 100%;
+	
+	padding-top: 30px;
+	text-align: justify;
+	color: #dbc0bd;
 }
 
 
 
 h1 {
-  font-family: "Freckle Face", system-ui;
-  font-weight: 400;
+   font-family: "Freckle Face", system-ui;
+  font-family: "Climate Crisis", serif;
+  font-weight: 10;
   font-style: normal;
   
+  font-family: "Roboto", serif;
+  font-weight: 700;
+  font-style: normal;
+  padding: 10px 10%;
   
-  padding-top: 0px;
+  padding-top: 60px;
 	
 	
-	font-size: 450%;
-	color: #000000;
+	font-size: 200%;
+	/*color: #111111;*/
+	color: #dbc0bd;
 	text-align: center;
 	position: relative;
 	
@@ -79,30 +109,38 @@ h1 {
             justify-content: center;
             align-items: center;
             
-            /*background-color: #f0f2f5;*/
-            background: linear-gradient(45deg, #ffffff, #289fc9);
+            /*background-color: #f0f2f5;
+            background: linear-gradient(45deg, #ffffff, #289fc9); */
+            background: radial-gradient(#ff1010, #111111);
             animation: gradient-animation 6s ease infinite;
             font-family: Arial, sans-serif;
         }
 
         .input-container {
             position: relative;
-            width: 600px;
+            width: 100%;
             
             
             
             display: flex;
   	    margin: 0 auto;
   	    padding-top: 0px;
+  	    padding-left: 10%;
+  	    padding-right: 10%;
+  	    padding-bottom: 30px;
         }
 
         /* Styling the input field */
         .input-field {
             width: 100%;
             padding: 12px 20px 12px 10px;
-            font-size: 16px;
-            border: 2px solid #ccc;
-            border-radius: 8px;
+            
+                font-family: "Roboto", serif;
+  		font-weight: 500;
+  		font-style: normal;
+            
+            border: 1px solid #ccc;
+            border-radius: 0px;
             outline: none;
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
@@ -110,27 +148,33 @@ h1 {
 
 
 
-
+	.input-field {
+	    background-color: #dd3333;
+	
+	}
 
 
 
 
         .input-field:focus {
             border-color: #111111;
+            background-color: #cccccc;
             box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
         }
 
         /* Label styling */
         .input-label {
             position: absolute;
-            top: 40%;
+            padding-left: 10%;
+            top: 23%;
             left: 10px;
             font-size: 16px;
             /*color: #888;*/
             color: #111111;
             pointer-events: none;
             transition: 0.3s;
-            transform: translateY(-20%);
+            transform: translateY(-25%);
+           
         }
 
         /* Move label up when input is focused or has text */
@@ -143,16 +187,19 @@ h1 {
             /*background-color: #f0f2f5;*/
             
             padding: 0 4px;
+            padding: 10px 10%;
         }
          .button {
             padding: 12px 24px;
-            font-size: 16px;
-            font-weight: 600;
+            
+              font-family: "Roboto", serif;
+	  font-weight: 500;
+	  font-style: normal;
             color: #fff;
             /*background-color: #007bff;*/
             background-color: #111111;
             border: none;
-            border-radius: 8px;
+            border-radius: 0px;
             cursor: pointer;
             outline: none;
             transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
