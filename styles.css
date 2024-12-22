@@ -14,17 +14,32 @@
   font-style: normal;
 }
 
-// <uniquifier>: Use a unique and descriptive class name
-
-.climate-crisis-<uniquifier> {
-  font-family: "Climate Crisis", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
-    "YEAR" 1979;
+#pchess {
+text-align: center;
 }
 
+
+#maz {
+        font-family: "Roboto", serif;
+        font-weight: 200;
+	  font-style: normal;
+            color: #ffffff;
+            /*background-color: #007bff;*/
+            background-color: #461A1B;
+            border: none;
+            border-radius: 0px;
+            padding: 12px 24px;
+            font-size: 100%
+        
+        }
+        
+#maz:hover {
+
+background-color: #5d9948;
+font-weight: 300;
+}        
+        
+        
 
 #vid {
  left: 50%;
@@ -58,10 +73,7 @@ p {
 
 
 h1 {
-   font-family: "Freckle Face", system-ui;
-  font-family: "Climate Crisis", serif;
-  font-weight: 10;
-  font-style: normal;
+
   
   font-family: "Roboto", serif;
   font-weight: 700;
@@ -173,7 +185,7 @@ h1 {
             color: #111111;
             pointer-events: none;
             transition: 0.3s;
-            transform: translateY(-25%);
+            transform: translateY(-30%);
            
         }
 

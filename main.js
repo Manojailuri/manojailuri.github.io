@@ -28,6 +28,9 @@ document.getElementById("inputstr").value = "";
 
 
 
-
-
 });
+function reDirect() {
+  window.location.href = "https://link.chess.com/friend/05Qg7S";
+}
+
+
