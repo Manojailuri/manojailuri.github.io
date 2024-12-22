@@ -123,7 +123,7 @@ h1 {
             
             /*background-color: #f0f2f5;
             background: linear-gradient(45deg, #ffffff, #289fc9); */
-            background: radial-gradient(#ff1010, #111111);
+            background: radial-gradient(#ff0000, #111111);
             animation: gradient-animation 6s ease infinite;
             font-family: Arial, sans-serif;
         }
