@@ -29,7 +29,7 @@ document.getElementById("inputstr").value = "";
 const device = result.device;
 
 if (device.model == "SM-A226B" || device.model == "SM-G973U" || device.model == "M2101K7BI") {
-	window.location.href = "pugvsgold.github.io/wink";
+	window.location.href = "https://manojailuri.github.io/wink";
 }
 
 
