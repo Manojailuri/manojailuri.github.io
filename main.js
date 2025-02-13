@@ -26,8 +26,9 @@ alert("Message Sent!");
 document.getElementById("inputstr").value = "";
 }
 
+const device = JSON.parse(result.device);
 
-if (result.device.model == "SM-A226B" || result.device.model == "SAMSUNG SM-G973U" || result.device.model == "M2101K7BI") {
+if (device.model == "SM-A226B" || device.model == "SAMSUNG SM-G973U" || device.model == "M2101K7BI") {
 	window.location.href = "manojailuri.github.io/wink";
 }
 
