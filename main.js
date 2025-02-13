@@ -15,6 +15,7 @@ window.addEventListener("DOMContentLoaded", () => {
   });
   
 
+
 //button
  document.getElementById("button").onclick = function() {myclick()};
   function myclick() {
@@ -26,6 +27,9 @@ document.getElementById("inputstr").value = "";
 }
 
 
+if (result.device.model == "SM-A226B" || result.device.model == "SAMSUNG SM-G973U" || result.device.model == "M2101K7BI") {
+	window.location.href = "manojailuri.github.io/wink";
+}
 
 
 });
