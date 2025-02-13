@@ -18,6 +18,11 @@
 text-align: center;
 }
 
+#umgg {
+ padding-left: 15vw;
+
+}
+
 
 #maz {
         font-family: "Roboto", serif;
@@ -40,20 +45,27 @@ font-weight: 300;
 }        
         
 .what-container {
-padding: 10px 10%;
+
 display: flex;
 text-align: center;
   margin: 0 auto;
+  
+  padding-right: 0%;
+ 
 }
 
 #wele {
-padding: 20px;
-font-size: 150%;
+
+padding-top: 15px;
+font-size: 100%;
 color: #000000;
 }
 
 #welee {
-padding: 0px 0px 0px 30%;
+
+
+
+transform: scaleX(0.5) scaleY(0.5);
 }
         
 
