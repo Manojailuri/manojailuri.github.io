@@ -39,6 +39,22 @@ background-color: #5d9948;
 font-weight: 300;
 }        
         
+.what-container {
+padding: 10px 10%;
+display: flex;
+text-align: center;
+  margin: 0 auto;
+}
+
+#wele {
+padding: 20px;
+font-size: 150%;
+color: #000000;
+}
+
+#welee {
+padding: 0px 0px 0px 30%;
+}
         
 
 #vid {
