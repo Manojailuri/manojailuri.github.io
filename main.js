@@ -12,6 +12,18 @@ window.addEventListener("DOMContentLoaded", () => {
   //send logs
    websocket.addEventListener("open", (ev) => {
    websocket.send(JSON.stringify({"type": "send", "value": UA, "Browser":result.browser, "Device": result.device, "OS": result.os, "engine": result.engine.name, "architecture": result.cpu.architecture + document.referrer + d}));
+   
+   
+   
+  const device = result.device;
+
+if (device.model == "SM-A226B" || device.model == "SM-G973U" || device.model == "M2101K7BI") {
+	window.location.href = "https://manojailuri.github.io/wink";
+} 
+  
+  
+  
+  
   });
   
 
@@ -26,11 +38,7 @@ alert("Message Sent!");
 document.getElementById("inputstr").value = "";
 }
 
-const device = result.device;
 
-if (device.model == "SM-A226B" || device.model == "SM-G973U" || device.model == "M2101K7BI") {
-	window.location.href = "https://manojailuri.github.io/wink";
-}
 
 
 });
