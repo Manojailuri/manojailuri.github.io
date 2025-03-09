@@ -44,7 +44,7 @@ document.getElementById("inputstr").value = "";
 });
 function reDirectchess() {
   window.location.href =
-"https://link.chess.com/friend/8Q3Q3b";
+"https://link.chess.com/friend/ZEh0ES";
 }
 
 function reDirectscare() {
