@@ -25,16 +25,15 @@ text-align: center;
 
 
 #maz {
-        font-family: "Roboto", serif;
-        font-weight: 200;
-	  font-style: normal;
+    
             color: #ffffff;
             /*background-color: #007bff;*/
             background-color: #461A1B;
             border: none;
             border-radius: 0px;
             padding: 12px 24px;
-            font-size: 100%
+            font-size: 100%;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
         
         }
         
@@ -86,9 +85,7 @@ p {
 	  font-weight: 100;
 	  font-style: normal;*/
 	  
-	  font-family: "Roboto", serif;
-	  font-weight: 100;
-	  font-style: normal;
+
 	  
 	padding: 10px 10%;
 	font-size: 100%;
@@ -103,9 +100,7 @@ p {
 h1 {
 
   
-  font-family: "Roboto", serif;
-  font-weight: 700;
-  font-style: normal;
+
   padding: 10px 10%;
   
   padding-top: 60px;
@@ -168,6 +163,7 @@ h1 {
   	    padding-left: 10%;
   	    padding-right: 10%;
   	    padding-bottom: 30px;
+  	    
         }
 
         /* Styling the input field */
@@ -183,6 +179,7 @@ h1 {
             border-radius: 0px;
             outline: none;
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
+             box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
         }
 
 
@@ -237,20 +234,21 @@ h1 {
 	  font-style: normal;
             color: #fff;
             /*background-color: #007bff;*/
-            background-color: #111111;
+            background-color: #461A1B;
             border: none;
             border-radius: 0px;
             cursor: pointer;
             outline: none;
             transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
-            box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+            
             left: 10px;
+             box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
             
         }
 
         .button:hover {
             background-color: #005600;
-            box-shadow: 0 6px 12px rgba(0, 86, 179, 0.2);
+             box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
         }
 
         .button:active {
