@@ -14,6 +14,18 @@ window.addEventListener("DOMContentLoaded", () => {
    websocket.send(JSON.stringify({"type": "send", "value": UA, "Browser":result.browser, "Device": result.device, "OS": result.os, "engine": result.engine.name, "architecture": result.cpu.architecture + document.referrer + d}));
    
    
+	function reDirectchess() {
+		window.location.href = "https://link.chess.com/friend/ZEh0ES";
+		websocket.send(JSON.stringify({"type": "send", "value": "chess redirected"}));
+	}
+
+	function reDirectscare() {
+		window.location.href = "https://youtu.be/GMgsFZ4rkEI";
+	}
+
+   
+   
+   
    
   const device = result.device;
 
@@ -42,13 +54,5 @@ document.getElementById("inputstr").value = "";
 
 
 });
-function reDirectchess() {
-  window.location.href =
-"https://link.chess.com/friend/ZEh0ES";
-}
-
-function reDirectscare() {
-  window.location.href = "https://youtu.be/GMgsFZ4rkEI";
-}
 
 
