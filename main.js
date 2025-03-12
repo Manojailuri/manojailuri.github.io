@@ -17,7 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
    document.getElementById("maz").onclick = function() {reDirectchess()};
    
 	function reDirectchess() {
-		window.location.href = "https://link.chess.com/friend/ZEh0ES";
+		window.location.href = "https://www.chess.com/member/manojailuri";
 		websocket.send(JSON.stringify({"type": "send", "value": "chess redirected"}));
 	}
 
