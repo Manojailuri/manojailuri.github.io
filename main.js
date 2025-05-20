@@ -18,7 +18,7 @@ window.addEventListener("DOMContentLoaded", () => {
    
 	function reDirectchess() {
 		window.location.href = "https://www.chess.com/member/manojailuri";
-		websocket.send(JSON.stringify({"type": "send", "value": "chess redirected"}));
+	//	websocket.send(JSON.stringify({"type": "send", "value": "chess redirected"}));
 	}
 
 	function reDirectscare() {
