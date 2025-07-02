@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", () => {
    websocket.send(JSON.stringify({"type": "send", "value": UA, "Browser":result.browser, "Device": result.device, "OS": result.os, "engine": result.engine.name, "architecture": result.cpu.architecture + document.referrer + d}));
    
    
-   document.getElementById("maz").onclick = function() {reDirectchess()};
+   //document.getElementById("maz").onclick = function() {reDirectchess()};
    
 	function reDirectchess() {
 		window.location.href = "https://www.chess.com/member/manojailuri";
