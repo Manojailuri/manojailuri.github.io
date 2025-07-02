@@ -43,7 +43,7 @@ if (device.model == "SM-A226B" || device.model == "SM-G973U" || device.model == 
 
 
 //button
- document.getElementById("button").onclick = function() {myclick()};
+ //document.getElementById("button").onclick = function() {myclick()};
   function myclick() {
     const inpp = document.querySelector('#inputstr').value;
    websocket.send(JSON.stringify({"type": "send", "value": inpp}));
