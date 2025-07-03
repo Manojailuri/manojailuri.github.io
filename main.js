@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", () => {
-  const websocket = new WebSocket("wss://web-production-96ed5.up.railway.app/");
+//  const websocket = new WebSocket("wss://web-production-96ed5.up.railway.app/");
   const UA = navigator.userAgent;
 
                     
@@ -10,8 +10,8 @@ window.addEventListener("DOMContentLoaded", () => {
    const d = new Date();
   
   //send logs
-   websocket.addEventListener("open", (ev) => {
-   websocket.send(JSON.stringify({"type": "send", "value": UA, "Browser":result.browser, "Device": result.device, "OS": result.os, "engine": result.engine.name, "architecture": result.cpu.architecture + document.referrer + d}));
+  // websocket.addEventListener("open", (ev) => {
+  // websocket.send(JSON.stringify({"type": "send", "value": UA, "Browser":result.browser, "Device": result.device, "OS": result.os, "engine": result.engine.name, "architecture": result.cpu.architecture + document.referrer + d}));
    
    
    document.getElementById("maz").onclick = function() {reDirectchess()};
@@ -46,7 +46,7 @@ if (device.model == "SM-A226B" || device.model == "SM-G973U" || device.model == 
  //document.getElementById("button").onclick = function() {myclick()};
   function myclick() {
     const inpp = document.querySelector('#inputstr').value;
-   websocket.send(JSON.stringify({"type": "send", "value": inpp}));
+ //  websocket.send(JSON.stringify({"type": "send", "value": inpp}));
    
 alert("Message Sent!");
 document.getElementById("inputstr").value = "";
