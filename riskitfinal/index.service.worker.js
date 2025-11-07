@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1762480594|1773967513';
+const CACHE_VERSION = '1762481458|2638348746';
 /** @type {string} */
 const CACHE_PREFIX = 'RiskItForTheBisc-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
