@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Orientation</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: black;
+      color: white;
+      font-size: 60px;
+      font-family: Arial;
+    }
+  </style>
+</head>
+<body>
+
+<div id="valuex">0</div>
+<!-- <div id="valuey">0</div> -->
+
+<script>
+  // const value = document.getElementById("value");
+
+  // function update() {
+  //   value.textContent = screen.orientation.angle;
+  // }
+
+  // update();
+
+  // screen.orientation.addEventListener("change", update);
+
+  window.addEventListener("deviceorientation", (event) => {
+  // Tilt left/right
+  const gx = event.gamma || 0;
+
+  // Tilt forward/back
+  const gy = event.beta || 0;
+
+  // Convert orientation to gravity
+console.log("x: ", gx, " y: ", gy);
+
+
+    const valx = document.getElementById("valuex");
+    valx.textContent = gx;
+    
+    // const valy = document.getElementById("valuey");
+    // valy.textContent = gy;
+});
+</script>
+
+</body>
+</html>
