@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Three.js Cube Scene</title>
+
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #111827;
+    }
+
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+
+
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.165/build/three.module.js"
+  }
+}
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+
+// import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165/build/three.module.js';
+import RAPIER from "https://cdn.jsdelivr.net/npm/@dimforge/rapier2d-compat@0.14.0/rapier.es.js";
+import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.165/examples/jsm/controls/OrbitControls.js';
+
+
+await RAPIER.init();
+
+
+
+
+
+async function enableAccelerometer() {
+  if (
+    typeof DeviceMotionEvent !== "undefined" &&
+    typeof DeviceMotionEvent.requestPermission === "function"
+  ) {
+    try {
+      const permission = await DeviceMotionEvent.requestPermission();
+
+      if (permission === "granted") {
+        startListening();
+      } else {
+        alert("Permission denied");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  } else {
+    startListening();
+  }
+}
+
+
+
+
+
+
+
+
+//
+// Scene
+//
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x1e293b);
+
+
+
+//
+// RAPIER WORLD
+//
+const world = new RAPIER.World({
+  x: 0,
+  y: -9.8
+});
+
+
+//
+// GROUND
+//
+const groundBodyDesc = RAPIER.RigidBodyDesc.fixed()
+  .setTranslation(0, -250);
+
+const groundBody = world.createRigidBody(groundBodyDesc);
+
+const groundColliderDesc = RAPIER.ColliderDesc.cuboid(
+  10000,
+  20
+);
+
+world.createCollider(groundColliderDesc, groundBody);
+
+
+
+
+const ceilingBodyDesc = RAPIER.RigidBodyDesc.fixed()
+  .setTranslation(0, 550);
+
+const ceilingBody = world.createRigidBody(ceilingBodyDesc);
+
+const ceilingColliderDesc = RAPIER.ColliderDesc.cuboid(
+  10000,
+  20
+);
+
+world.createCollider(ceilingColliderDesc, ceilingBody);
+
+
+
+
+
+
+const leftBodyDesc = RAPIER.RigidBodyDesc.fixed()
+  .setTranslation(-700, -250);
+
+const leftBody = world.createRigidBody(leftBodyDesc);
+
+const leftColliderDesc = RAPIER.ColliderDesc.cuboid(
+  100,
+  6000
+);
+
+world.createCollider(leftColliderDesc, leftBody);
+
+
+
+
+
+const rightBodyDesc = RAPIER.RigidBodyDesc.fixed()
+  .setTranslation(710, -250);
+
+const rightBody = world.createRigidBody(rightBodyDesc);
+
+const rightColliderDesc = RAPIER.ColliderDesc.cuboid(
+  100,
+  6000
+);
+
+world.createCollider(rightColliderDesc, rightBody);
+
+
+
+
+
+
+
+//
+// Camera
+//
+const camera = new THREE.PerspectiveCamera(
+  60,
+  window.innerWidth / window.innerHeight,
+  0.1,
+  10000
+);
+
+camera.position.set(0, 0, 100);
+
+camera.lookAt(new THREE.Vector3(0, 0, -100))
+
+//
+// Renderer
+//
+const renderer = new THREE.WebGLRenderer({
+  antialias: true
+});
+
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.shadowMap.enabled = true;
+
+
+// const controls = new OrbitControls(camera, renderer.domElement);
+
+// controls.enableDamping = true;
+// controls.dampingFactor = 0.05;
+
+// controls.target.set(0, 0, 0);
+
+
+document.body.appendChild(renderer.domElement);
+
+//
+// Lights
+//
+
+// Soft ambient light
+const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
+scene.add(ambientLight);
+
+// Main directional light
+const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
+directionalLight.position.set(5, 10, 7);
+
+directionalLight.castShadow = true;
+
+scene.add(directionalLight);
+
+// Fill light
+const fillLight = new THREE.DirectionalLight(0x88ccff, 0.8);
+fillLight.position.set(-5, 3, -5);
+scene.add(fillLight);
+
+//
+// Cube
+//
+const geometry = new THREE.BoxGeometry(1, 1, 1);
+
+const material = new THREE.MeshStandardMaterial({
+  color: 0x60a5fa,
+  roughness: 0.35,
+  metalness: 0.1
+});
+
+const cube = new THREE.Mesh(geometry, material);
+cube.castShadow = true;
+scene.add(cube);
+
+// //
+// // Ground
+// //
+// const ground = new THREE.Mesh(
+//   new THREE.PlaneGeometry(10, 10),
+//   new THREE.ShadowMaterial({
+//     opacity: 0.25
+//   })
+// );
+
+// ground.rotation.x = -Math.PI / 2;
+// ground.position.y = -1;
+// ground.receiveShadow = true;
+
+// scene.add(ground);
+
+
+
+
+
+
+//
+// CREATE BALL
+//
+function createBall(x, y, radius = 25) {
+
+  // Physics body
+  const bodyDesc = RAPIER.RigidBodyDesc.dynamic()
+    .setTranslation(x, y);
+
+  const body = world.createRigidBody(bodyDesc);
+
+  const colliderDesc = RAPIER.ColliderDesc.ball(radius)
+    .setRestitution(0.8);
+
+  world.createCollider(colliderDesc, body);
+
+  // // Pixi graphics
+  // const gfx = new PIXI.Graphics()
+  //   .circle(0, 0, radius)
+  //   .fill(0x66ccff);
+
+  // app.stage.addChild(gfx);
+
+  const spheree = new THREE.SphereGeometry( radius, 32, 16 );
+
+  const materiall = new THREE.MeshStandardMaterial({
+    color: 0x60a5fa,
+    roughness: 0.35,
+    metalness: 0.1
+  });
+
+  const gfx = new THREE.Mesh(spheree, materiall);
+  gfx.position.set(0, 0, -400);
+  scene.add(gfx);
+  console.log("Added new sphere..");
+
+  return {
+    body,
+    gfx
+  };
+}
+
+
+
+
+//
+// CREATE MANY BALLS
+//
+const balls = [];
+
+for (let i = 0; i < 10; i++) {
+  balls.push(
+    createBall(
+      200 + Math.random() * 300,
+      50 + i * 60,
+      20 + Math.random() * 5
+    )
+  );
+}
+
+
+
+
+
+
+
+//
+// Animation
+//
+function animate() {
+  requestAnimationFrame(animate);
+
+  // cube.rotation.x += 0.01;
+  // cube.rotation.y += 0.015;
+
+
+
+  for (const ball of balls) {
+    // Fixed timestep
+    world.step();
+
+
+    const pos = ball.body.translation();
+    const rot = ball.body.rotation();
+
+    ball.gfx.position.x = pos.x;
+    ball.gfx.position.y = pos.y;
+    // console.log(ball.gfx.position.y);
+    // ball.gfx.rotation = rot;
+  }
+
+
+
+
+
+
+  renderer.render(scene, camera);
+}
+
+animate();
+
+
+
+window.addEventListener("pointerdown", (e) => {
+  const nball = createBall(e.clientX, e.clientY);
+  balls.push(nball);
+
+  console.log("x: ", balls[0].gfx.position.x, " y: ", balls[0].gfx.position.y, " z: ", balls[0].gfx.position.z);
+
+});
+
+
+
+window.addEventListener("deviceorientation", (event) => {
+  // Tilt left/right
+  const gx = event.gamma || 0;
+
+  // Tilt forward/back
+  const gy = event.beta || 0;
+
+  // Convert orientation to gravity
+  world.gravity = {
+    x: gx * 0.3,
+    y: gy * 0.3
+  };
+});
+
+
+
+
+
+
+//
+// Resize
+//
+window.addEventListener('resize', () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+</script>
+
+</body>
+</html>
