@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VOLTIX — Electric Citrus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/assets/index-DFhmcRbg.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DBxOZo0o.css">
+  </head>
+  <body>
+    <!-- Loader -->
+    <div id="loader">
+      <div class="loader-mark">VOLTIX</div>
+      <div class="loader-bar"><span id="loader-fill"></span></div>
+    </div>
+
+    <!-- 3D stage (fixed, behind content) -->
+    <canvas id="stage"></canvas>
+
+    <!-- Top bar -->
+    <header class="topbar">
+      <span class="brand">VOLTIX<sup>®</sup></span>
+      <nav class="dots" id="dots"></nav>
+    </header>
+
+    <main id="scroller">
+      <!-- 1. Hero -->
+      <section class="panel" data-step="hero">
+        <div class="copy left">
+          <p class="eyebrow">Sparkling Energy</p>
+          <h1>Electric<br /><span class="accent">Citrus</span></h1>
+          <p class="lede">A bright citrus charge in a slim 250 ml can. Scroll to take it apart.</p>
+          <div class="scroll-cue"><span></span>Scroll</div>
+        </div>
+      </section>
+
+      <!-- 2. Energy -->
+      <section class="panel" data-step="energy">
+        <div class="copy right">
+          <p class="eyebrow">01 — Instant energy</p>
+          <h2>Lift without<br />the crash.</h2>
+          <p class="lede">32 mg of caffeine per can, paired with taurine for a clean, steady boost.</p>
+          <ul class="chips">
+            <li><b>32</b><small>mg caffeine</small></li>
+            <li><b>110</b><small>kcal</small></li>
+            <li><b>250</b><small>ml</small></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 3. Vitamins -->
+      <section class="panel" data-step="vitamins">
+        <div class="copy left">
+          <p class="eyebrow">02 — B vitamins</p>
+          <h2>B3 · B6 · B12</h2>
+          <p class="lede">100% of the daily value of each, in every can. Zero artificial colours.</p>
+          <ul class="list">
+            <li><span>Vitamin B3 (Niacin)</span><span>16 mg</span></li>
+            <li><span>Vitamin B6</span><span>1.7 mg</span></li>
+            <li><span>Vitamin B12</span><span>2.4 mcg</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 4. Top / open -->
+      <section class="panel" data-step="top">
+        <div class="copy right">
+          <p class="eyebrow">03 — Crack it open</p>
+          <h2>Ice cold.<br /><span class="accent">Fully charged.</span></h2>
+          <p class="lede">Best served chilled. Not recommended for children, pregnant or lactating women, or anyone sensitive to caffeine.</p>
+        </div>
+      </section>
+
+      <!-- 5. Explore (free orbit) -->
+      <section class="panel explore" data-step="explore">
+        <div class="explore-ui">
+          <p class="eyebrow">Explore</p>
+          <h2>Your turn.</h2>
+          <p class="hint" id="hint">Drag to rotate · Scroll / pinch to zoom · Right-drag to pan</p>
+          <div class="explore-actions">
+            <button id="btn-reset" type="button">Reset view</button>
+            <button id="btn-spin" type="button" aria-pressed="false">Auto-rotate</button>
+            <button id="btn-top" type="button">Back to top ↑</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </body>
+</html>
